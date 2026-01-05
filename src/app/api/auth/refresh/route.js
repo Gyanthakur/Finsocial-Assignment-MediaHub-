@@ -1,6 +1,6 @@
-import { verifyRefreshToken, generateAccessToken } from '@/lib/auth/jwt';
-import { handleApiError, ApiError } from '@/lib/api/errorHandler';
-import prisma from '@/lib/db/prisma';
+import { verifyRefreshToken, generateAccessToken } from '@/src/lib/auth/jwt';
+import { handleApiError, ApiError } from '@/src/lib/api/errorHandler';
+import prisma from '@/src/lib/db/prisma';
 
 export async function POST(req) {
   try {

@@ -1,21 +1,7 @@
-// import { PrismaClient } from '@prisma/client';
 
-// const prisma = new PrismaClient();
-
-// export async function DELETE(req, { params }) {
-//   try {
-//     const { id } = params;
-
-//     await prisma.post.delete({ where: { id } });
-
-//     return Response.json({ success: true });
-//   } catch (error) {
-//     return Response.json({ error: 'Failed to delete post' }, { status: 500 });
-//   }
-// }
-import prisma from '@/lib/db/prisma';
-import { verifyAccessToken } from '@/lib/auth/jwt';
-import { handleApiError, ApiError } from '@/lib/api/errorHandler';
+import prisma from '@/src/lib/db/prisma';
+import { verifyAccessToken } from '@/src/lib/auth/jwt';
+import { handleApiError, ApiError } from '@/src/lib/api/errorHandler';
 
 const getHandler = async (req, { params }) => {
   try {
