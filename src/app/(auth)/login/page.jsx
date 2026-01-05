@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import {Suspense, useEffect, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import LoginForm from "@/src/components/Auth/LoginForm";
 import Link from "next/link";
 import * as THREE from "three";
 
-export default function LoginPage() {
+ function LoginPageContent() {
 	const searchParams = useSearchParams();
 	const [isAdminLogin, setIsAdminLogin] = useState(false);
 	const canvasRef = useRef(null);
@@ -265,3 +265,13 @@ export default function LoginPage() {
 		</div>
 	);
 }
+
+
+export default function LoginPage() {
+	return (
+		<Suspense fallback={null}>
+			<LoginPageContent />
+		</Suspense>
+	);
+}
+
